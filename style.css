@@ -490,127 +490,275 @@ textarea {
 .green-text {
     color: var(--green);
 }
-
-
-/* =========================
+/* =====================================================
    EDUCATION
-========================= */
+===================================================== */
 
-.timeline {
-    max-width: 900px;
-
-    margin: auto;
-
-    position: relative;
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.timeline::before {
-    content: "";
 
-    position: absolute;
+/* =====================================================
+   EDUCATION CARD
+===================================================== */
 
-    left: 8px;
+.education-card {
 
-    top: 0;
+    width: 100%;
 
-    bottom: 0;
+    box-sizing: border-box;
 
-    width: 1px;
+    display: flex;
 
-    background: var(--border);
-}
+    justify-content: space-between;
 
-.timeline-item {
-    position: relative;
+    align-items: center;
 
-    padding-left: 45px;
+    padding: 25px 25px;
 
-    margin-bottom: 35px;
-}
-
-.timeline-dot {
-    position: absolute;
-
-    left: 2px;
-
-    top: 10px;
-
-    width: 14px;
-
-    height: 14px;
-
-    border-radius: 50%;
-
-    background: var(--green);
-
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
-}
-
-.timeline-card {
+    /* SAME BACKGROUND AS YOUR WEBSITE */
     background: var(--card);
 
+    /* SAME BORDER AS YOUR WEBSITE */
     border: 1px solid var(--border);
 
     border-radius: 8px;
 
-    padding: 28px;
-
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
-.timeline-card:hover {
+
+/* Hover Effect */
+
+.education-card:hover {
+
     border-color: var(--green);
 
-    transform: translateX(5px);
+    transform: translateY(-3px);
+
 }
 
-.date {
-    display: inline-block;
+
+/* =====================================================
+   LEFT SIDE
+===================================================== */
+
+.education-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+/* Graduation Icon */
+
+.education-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     color: var(--green);
 
-    font-size: 13px;
+    font-size: 22px;
 
-    font-family: monospace;
-
-    margin-bottom: 10px;
 }
 
-.timeline-card h3 {
-    font-size: 21px;
 
-    margin-bottom: 6px;
+/* =====================================================
+   EDUCATION TEXT
+===================================================== */
+
+.education-info h3 {
+
+    margin: 0 0 6px;
+
+    color: var(--text);
+
+    font-size: 19px;
+
+    font-weight: 700;
+
 }
 
-.timeline-card h4 {
-    color: #c3d4ca;
 
-    font-weight: 500;
+.education-info h4 {
 
-    margin-bottom: 12px;
-}
+    margin: 0;
 
-.timeline-card p {
     color: var(--muted);
+
+    font-size: 16px;
+
+    font-weight: 400;
+
 }
 
-.tag {
-    display: inline-block;
 
-    margin-top: 15px;
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
 
-    padding: 5px 10px;
+.education-right {
 
-    border: 1px solid var(--green);
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    margin-left: 30px;
+
+    white-space: nowrap;
+
+}
+
+
+/* Year */
+
+.education-right .date {
 
     color: var(--green);
 
-    border-radius: 4px;
+    font-size: 15px;
 
-    font-size: 12px;
+    font-weight: 600;
+
 }
 
 
+/* CGPA / Percentage */
+
+.education-right .cgpa {
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 750px) {
+
+    .education-card {
+
+        padding: 20px;
+
+    }
+
+    .education-left {
+
+        gap: 12px;
+
+    }
+
+    .education-info h3 {
+
+        font-size: 16px;
+
+    }
+
+    .education-info h4 {
+
+        font-size: 13px;
+
+    }
+
+    .education-right {
+
+        margin-left: 15px;
+
+    }
+
+    .education-right .date {
+
+        font-size: 13px;
+
+    }
+
+    .education-right .cgpa {
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .education-card {
+
+        align-items: flex-start;
+
+    }
+
+    .education-left {
+
+        align-items: flex-start;
+
+    }
+
+    .education-icon {
+
+        width: 30px;
+
+        font-size: 18px;
+
+    }
+
+    .education-info h3 {
+
+        font-size: 15px;
+
+    }
+
+    .education-info h4 {
+
+        font-size: 12px;
+
+        line-height: 1.5;
+
+    }
+
+    .education-right {
+
+        margin-left: 10px;
+
+    }
+
+    .education-right .date {
+
+        font-size: 12px;
+
+    }
+
+    .education-right .cgpa {
+
+        font-size: 11px;
+
+    }
+
+}
 /* =========================
    SKILLS
 ========================= */
@@ -623,37 +771,78 @@ textarea {
     gap: 20px;
 }
 
+
+/* =========================
+   SKILL CARD
+========================= */
+
 .skill-card {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
     background: var(--card);
 
     border: 1px solid var(--border);
 
     border-radius: 8px;
 
-    padding: 28px;
+    padding: 25px;
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
+
+
+/* Hover */
 
 .skill-card:hover {
-    transform: translateY(-6px);
+
+    transform: translateY(-4px);
 
     border-color: var(--green);
+
 }
 
+
+/* =========================
+   SKILL ICON
+========================= */
+
 .skill-card > i {
+
     color: var(--green);
 
     font-size: 25px;
 
     margin-bottom: 18px;
+
 }
+
+
+/* =========================
+   SKILL TITLE
+========================= */
 
 .skill-card h3 {
-    margin-bottom: 18px;
+
+    margin: 0 0 18px;
+
+    color: var(--text);
+
+    font-size: 19px;
+
+    font-weight: 700;
+
 }
 
+
+/* =========================
+   SKILL TAGS
+========================= */
+
 .skill-tags {
+
     display: flex;
 
     flex-wrap: wrap;
@@ -661,8 +850,9 @@ textarea {
     gap: 8px;
 }
 
-.skill-tags span,
-.project-tech span {
+
+.skill-tags span {
+
     padding: 6px 10px;
 
     background: #10251b;
@@ -674,9 +864,60 @@ textarea {
     border-radius: 4px;
 
     font-size: 12px;
+
+    transition: 0.3s ease;
 }
 
 
+/* Tag Hover */
+
+.skill-tags span:hover {
+
+    color: var(--green);
+
+    border-color: var(--green);
+
+    background: rgba(0, 255, 136, 0.05);
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .skills-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .skills-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .skill-card {
+
+        padding: 22px;
+
+    }
+
+    .skill-card h3 {
+
+        font-size: 17px;
+
+    }
+
+}
 /* =========================
    PROJECTS
 ========================= */
